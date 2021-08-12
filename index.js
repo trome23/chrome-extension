@@ -6,7 +6,11 @@ let myLeads = []
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value) //<==push value from input to myLeads array
     inputEl.value = "" //<==clear input box after clicking button
+    localStorage.setItem("myLeads", JSON.stringify(myLeads)) //<==converting our array, myLeads, into a string so it can be stored locally
+
     renderLeads() //<== calling function to render content to DOM
+
+    console.log( localStorage.getItem("myLeads"))
 })
 
 function renderLeads() {

@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;
 }
 
 input {
@@ -22,4 +23,19 @@ button {
     display: flex;
     margin-top: 5px;
     font-weight: bold;
+}
+
+ul {
+    color: #5f9341;
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 20pxpx;
+}
+
+li {
+    margin-top: 5px;
+}
+
+a {
+    color: #5f9341;
 }
