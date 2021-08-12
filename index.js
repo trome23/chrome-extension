@@ -7,14 +7,13 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
 deleteBtn.addEventListener("dblclick", function () {
-    localStorage.clear()
-    myLeads= []
-    renderLeads()
-    console.log(myLeads, "double clicked worked!")
+    localStorage.clear()  //<== clears local storage
+    myLeads= []  //<== clears myLeads array
+    render(myLeads)  //<== clears the DOM
 })
 
 inputBtn.addEventListener("click", function() {
@@ -22,18 +21,18 @@ inputBtn.addEventListener("click", function() {
     inputEl.value = "" //<==clear input box after clicking button
     localStorage.setItem("myLeads", JSON.stringify(myLeads)) //<==converting our array, myLeads, into a string so it can be stored locally
 
-    renderLeads() //<== calling function to render content to DOM
+    render(myLeads) //<== calling function to render content to DOM
 
     console.log( localStorage.getItem("myLeads"))
 })
 
-function renderLeads() {
+function render(leads) {
     let listItems = "" //<== created variable to store ul list items
-    for (let i = 0; i < myLeads.length; i++) {   //<==for loop to iterate through array
+    for (let i = 0; i < leads.length; i++) {   //<==for loop to iterate through array
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>  
-                    ${myLeads[i]} 
+                <a target='_blank' href='${leads[i]}'>  
+                    ${leads[i]} 
                 </a>
             </li> ` //<== using template string instead of string concatenation 
     }

@@ -28,7 +28,7 @@ ul {
     color: #5f9341;
     list-style-type: none;
     padding-left: 0px;
-    margin-top: 20pxpx;
+    margin-top: 20px;
 }
 
 li {
@@ -43,4 +43,5 @@ a {
     background: #fff;
     color: #5f9341;
     font-weight: bold;
+    pointer-events: auto;
 }
