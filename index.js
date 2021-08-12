@@ -3,6 +3,13 @@ const inputEl = document.querySelector("#input-el")
 const ulEl = document.querySelector("#ul-el")
 let myLeads = []
 
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value) //<==push value from input to myLeads array
     inputEl.value = "" //<==clear input box after clicking button
